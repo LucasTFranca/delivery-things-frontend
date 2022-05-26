@@ -28,8 +28,50 @@ const registerUser = async (user) => {
   }
 };
 
+const uploadImage = async (image) => {
+  const form = new FormData();
+  form.append('image', image);
+
+  const config = {
+    headers: {
+      'content-type': 'multipart/form-data',
+    },
+  };
+
+  const fileAxios = axios.create();
+  const { data } = await fileAxios.post(`${baseUrl}/product/image`, form, config);
+
+  return data.image;
+};
+
+const addNewProduct = async (product, token) => {
+  try {
+    const {
+      title, description, value, image,
+    } = product;
+
+    const imageUrl = await uploadImage(image);
+
+    const { data } = await axios.post(`${baseUrl}/product`, {
+      title,
+      description,
+      value,
+      image: imageUrl,
+    }, {
+      headers: {
+        Authorization: token,
+      },
+    });
+
+    return data;
+  } catch (error) {
+    return error.message;
+  }
+};
+
 export {
   getAllProducts,
   connectUser,
   registerUser,
+  addNewProduct,
 };
