@@ -8,4 +8,17 @@ const getAllProducts = async () => {
   return data;
 };
 
-export default getAllProducts;
+const connectUser = async (user) => {
+  try {
+    const { data } = await axios.post(`${baseUrl}/login`, user);
+
+    return data;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export {
+  getAllProducts,
+  connectUser,
+};

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import ProductContext from './ProductContext';
-import getAllProducts from '../service';
+import { getAllProducts } from '../service';
 
 function ProductProvider({ children }) {
   const [products, setProducts] = useState([]);
