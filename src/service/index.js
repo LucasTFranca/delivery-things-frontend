@@ -18,7 +18,18 @@ const connectUser = async (user) => {
   }
 };
 
+const registerUser = async (user) => {
+  try {
+    const { data } = await axios.post(`${baseUrl}/user`, user);
+
+    return data;
+  } catch (error) {
+    return error.message;
+  }
+};
+
 export {
   getAllProducts,
   connectUser,
+  registerUser,
 };
