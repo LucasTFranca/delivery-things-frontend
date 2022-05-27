@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import { addNewProduct } from '../../service';
 
+import './Product.css';
+
 function Product() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -52,37 +54,39 @@ function Product() {
   }
 
   return (
-    <div>
+    <div className="product">
       <Header />
-      <form>
+      <div className="product-form-container">
+        <form className="product-form">
+          <label htmlFor="title">
+            Title
+            <input onChange={handleChange} value={title} type="text" id="title" />
+          </label>
+
+          <label htmlFor="description">
+            Description
+            <textarea maxLength={230} onChange={handleChange} value={description} type="text" id="description" />
+          </label>
+
+          <label htmlFor="value">
+            Value
+            <input min={0} onChange={handleChange} value={value} type="number" id="value" />
+          </label>
+
+          <label htmlFor="image">
+            image
+            <input onChange={handleChange} type="file" id="image" />
+          </label>
+
+          <button onClick={onSubmit} type="button">Add</button>
+        </form>
+
         {
           error && (
-            <span>{error}</span>
+            <span className="error-span">{error}</span>
           )
         }
-
-        <label htmlFor="title">
-          Title
-          <input onChange={handleChange} value={title} type="text" id="title" />
-        </label>
-
-        <label htmlFor="description">
-          Description
-          <input onChange={handleChange} value={description} type="text" id="description" />
-        </label>
-
-        <label htmlFor="value">
-          Value
-          <input onChange={handleChange} value={value} type="number" id="value" />
-        </label>
-
-        <label htmlFor="image">
-          image
-          <input onChange={handleChange} type="file" id="image" />
-        </label>
-
-        <button onClick={onSubmit} type="button">Add</button>
-      </form>
+      </div>
     </div>
   );
 }
