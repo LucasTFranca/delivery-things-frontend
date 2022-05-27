@@ -16,7 +16,13 @@ function ProductProvider({ children }) {
     loadProducts();
   }, [setProducts]);
 
-  const state = useMemo(() => ({ products }), [products]);
+  async function updateProducts() {
+    const data = await getAllProducts();
+
+    setProducts(data);
+  }
+
+  const state = useMemo(() => ({ products, updateProducts }), [products]);
 
   return (
     <ProductContext.Provider value={state}>

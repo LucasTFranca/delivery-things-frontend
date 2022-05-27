@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Header from '../components/Header';
 import ProductCard from '../components/ProductCard';
 import ProductContext from '../context/ProductContext';
 
 function Home() {
-  const { products } = useContext(ProductContext);
+  const { products, updateProducts } = useContext(ProductContext);
+
+  useEffect(() => {
+    updateProducts();
+  }, [updateProducts]);
 
   return (
     <div>
