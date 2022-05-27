@@ -15,6 +15,7 @@ function Header() {
     const linkDictionary = {
       login: '/login',
       register: '/register',
+      product: '/product',
       logo: '/',
     };
 
@@ -29,6 +30,7 @@ function Header() {
   return (
     <div className="Header">
       <button id="logo" onClick={handleClick} type="button">Delivery Things</button>
+      <button id="product" onClick={handleClick} type="button">Product</button>
       {
         user ? <button onClick={removeUserToken} type="button">Logout</button>
           : (
