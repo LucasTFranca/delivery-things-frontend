@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import { connectUser } from '../service';
+import Header from '../../components/Header/Header';
+import { connectUser } from '../../service';
 
 function Login() {
   const [email, setEmail] = useState('');

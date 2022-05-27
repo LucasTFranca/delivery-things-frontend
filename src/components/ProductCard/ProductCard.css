@@ -1,0 +1,28 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 18em;
+  height: 34vh;
+  background: #393d3f;
+  font-weight: 400;
+}
+
+.product-card img {
+  width: 100%;
+  height: 16vh;
+}
+
+.product-card span {
+  margin-top: 0.2em;
+}
+
+.product-value {
+  font-weight: 600;
+}
+
+.product-description {
+  font-weight: 300;
+}

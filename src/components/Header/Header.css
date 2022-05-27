@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 4vh;
+  background: #242423;
+}
+
+.header button {
+  cursor: pointer;
+  border: 0;
+  background: #242423;
+  color: aliceblue;
+}
+
+.left-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 12em;
+}
+
+.right-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.right-doble-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 8em;
+}
+
+.right-single-button-container {
+  display: flex;
+  justify-content: center;
+  width: 5em;
+}

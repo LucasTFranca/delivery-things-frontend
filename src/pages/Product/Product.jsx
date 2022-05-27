@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Header from '../components/Header';
-import { addNewProduct } from '../service';
+import Header from '../../components/Header/Header';
+import { addNewProduct } from '../../service';
 
 function Product() {
   const [title, setTitle] = useState('');

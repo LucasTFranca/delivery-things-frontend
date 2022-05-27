@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import { registerUser } from '../service';
+import Header from '../../components/Header/Header';
+import { registerUser } from '../../service';
 
 function Register() {
   const [name, setName] = useState('');
