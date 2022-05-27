@@ -3,7 +3,7 @@
 Delivery Things - front end é uma simples aplicação, utilizando `reactjs`.
 
 Com a aplicação você pode visualizar os produtos cadastrados no banco de dados,
-criar um usuário, fazer login com um usuário cadastrado, e criar um produto novo.
+criar um usuário, fazer login com um usuário já cadastrado, e criar um novo produto.
 
 
 ## Requisitos
