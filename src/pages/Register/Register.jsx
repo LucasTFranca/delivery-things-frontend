@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import { registerUser } from '../../service';
 
+import './Register.css';
+
 function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -56,32 +58,34 @@ function Register() {
   }
 
   return (
-    <div>
+    <div className="register">
       <Header />
-      <form>
+      <div className="register-form-container">
+        <form className="register-form">
+          <label htmlFor="name">
+            Name
+            <input onChange={handleChange} value={name} type="text" id="name" />
+          </label>
+
+          <label htmlFor="email">
+            Email
+            <input onChange={handleChange} value={email} type="email" id="email" />
+          </label>
+
+          <label htmlFor="password">
+            Password
+            <input onChange={handleChange} value={password} type="password" id="password" />
+          </label>
+
+          <button onClick={onSubmit} type="button">Register</button>
+        </form>
+
         {
           error && (
-            <span>{error}</span>
+            <span className="error-span">{error}</span>
           )
         }
-
-        <label htmlFor="name">
-          Name
-          <input onChange={handleChange} value={name} type="text" id="name" />
-        </label>
-
-        <label htmlFor="email">
-          Email
-          <input onChange={handleChange} value={email} type="email" id="email" />
-        </label>
-
-        <label htmlFor="password">
-          Password
-          <input onChange={handleChange} value={password} type="password" id="password" />
-        </label>
-
-        <button onClick={onSubmit} type="button">Register</button>
-      </form>
+      </div>
     </div>
   );
 }

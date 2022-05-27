@@ -1,4 +1,4 @@
-.login-form-container {
+.register-form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,24 +6,24 @@
   height: 80vh;
 }
 
-.login-form {
+.register-form {
   display: flex;
   flex-direction: column;
   padding-left: 1em;
   padding-right: 1em;
   width: 16em;
-  height: 23vh;
+  height: 30vh;
   border-radius: 5px;
   background: white;
 }
 
-.login-form label {
+.register-form label {
   display: flex;
   flex-direction: column;
   margin-top: 0.5em;
 }
 
-.login-form input {
+.register-form input {
   margin-top: 0.5em;
   height: 3vh;
   border: 1px solid black;
@@ -31,7 +31,7 @@
   text-align: center;
 }
 
-.login-form button {
+.register-form button {
   cursor: pointer;
   margin-top: 2.8em;
   height: 3vh;
@@ -39,10 +39,4 @@
   border-radius: 5px;
   background: #006097;
   color: aliceblue;
-}
-
-.error-span {
-  margin-top: 1em;
-  color: #D11147;
-  font-weight: 600;
 }
