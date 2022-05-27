@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import { connectUser } from '../../service';
 
+import './Login.css';
+
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -53,27 +55,30 @@ function Login() {
   }
 
   return (
-    <div>
+    <div className="login">
       <Header />
-      <form>
+      <div className="login-form-container">
+        <form className="login-form">
+
+          <label htmlFor="email">
+            Email
+            <input onChange={handleChange} value={email} type="email" id="email" />
+          </label>
+
+          <label htmlFor="password">
+            Password
+            <input onChange={handleChange} value={password} type="password" id="password" />
+          </label>
+
+          <button onClick={onSubmit} type="button">Login</button>
+        </form>
+
         {
           error && (
-            <span>{error}</span>
+            <span className="error-span">{error}</span>
           )
         }
-
-        <label htmlFor="email">
-          Email
-          <input onChange={handleChange} value={email} type="email" id="email" />
-        </label>
-
-        <label htmlFor="password">
-          Password
-          <input onChange={handleChange} value={password} type="password" id="password" />
-        </label>
-
-        <button onClick={onSubmit} type="button">Login</button>
-      </form>
+      </div>
     </div>
   );
 }
