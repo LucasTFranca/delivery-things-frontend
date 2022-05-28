@@ -36,7 +36,12 @@ function Product() {
     const data = await addNewProduct(product, token);
 
     if (!data.message) setError('Product already exist');
-    else alert('Product added');
+    else {
+      setTitle('');
+      setDescription('');
+      setValue(0);
+      alert('Product added');
+    }
   }
 
   function onSubmit() {
